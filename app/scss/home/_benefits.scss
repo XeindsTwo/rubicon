@@ -1,0 +1,46 @@
+.benefits {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+  &__item {
+    padding: 26px 28px;
+    background-color: $white;
+    border: 1px solid #CDCFD6;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      width: 310px;
+      height: 310px;
+      left: -40%;
+      top: -50%;
+      border-radius: 50%;
+      background: rgba(82, 135, 222, 0.46);
+      filter: blur(95px);
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 22px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 14px;
+    letter-spacing: -0.44px;
+  }
+
+  &__text {
+    color: $steel-gray;
+    letter-spacing: -0.36px;
+  }
+}

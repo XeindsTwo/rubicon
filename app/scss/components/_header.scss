@@ -1,0 +1,98 @@
+.header {
+  margin-top: 28px;
+  margin-bottom: 20px;
+
+  &__inner {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 19px 25px;
+    border-radius: 28px;
+    color: $steel-gray;
+    border: 1px solid #CDCFD6;
+    background-color: $white;
+    @include flex-align-center(0);
+
+    &::before {
+      z-index: -1;
+      @include pseudo;
+      max-width: 1190px;
+      width: 100%;
+      margin: 0 auto;
+      height: 140px;
+      border-radius: 1190px;
+      background: rgba(99, 142, 214, 0.46);
+      filter: blur(178px);
+    }
+  }
+
+  &__list {
+    @include flex-align-center(36);
+    margin-left: 24px;
+  }
+
+  &__link {
+    letter-spacing: -0.32px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  &__right {
+    @include flex-align-center(15);
+    margin-left: auto;
+  }
+
+  &__phone {
+    font-weight: 400;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: color .4s, border .4s;
+    @include flex-align-center(6);
+
+    &:hover {
+      color: $accent;
+
+      svg path {
+        stroke: $accent;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+
+  &__btn {
+    border-radius: 16px;
+    background-color: $accent;
+    color: $white;
+    padding: 8px 16px;
+    border: 1px solid;
+    transition: color .4s, background-color .4s, border .4s;
+
+    &:hover {
+      background-color: $deep-navy;
+      border-color: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $accent;
+      color: $deep-navy;
+    }
+  }
+
+  &__mobile {
+    display: none;
+  }
+}

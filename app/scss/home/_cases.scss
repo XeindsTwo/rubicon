@@ -1,0 +1,112 @@
+.cases {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  &__item {
+    padding: 50px 30px 30px;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+    border: 1px solid #CDCFD6;
+
+    &::before {
+      @include pseudo;
+      width: 310px;
+      height: 310px;
+      left: -30%;
+      top: -30%;
+      border-radius: 50%;
+      background: rgba(82, 135, 222, 0.46);
+      filter: blur(95px);
+    }
+
+    img {
+      @include objectCoverBg;
+    }
+  }
+
+  &__show {
+    @include flex-center;
+    position: relative;
+    z-index: 5;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #CDCFD6;
+    margin: 0 auto 42px;
+    max-width: max-content;
+    transition: border .4s, opacity .4s;
+
+    &:focus {
+      border-color: $accent;
+      opacity: .7;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    margin-bottom: 14px;
+  }
+
+  &__comment {
+    font-size: 22px;
+    letter-spacing: -0.44px;
+    color: $steel-gray;
+  }
+
+  &__gis {
+    background-color: $white;
+    border: 1px solid #CDCFD6;
+    overflow: hidden;
+    position: relative;
+    border-radius: 28px;
+    padding: 37px 40px;
+
+    &::before {
+      @include pseudo;
+      right: -8%;
+      bottom: -92%;
+      width: 382px;
+      height: 382px;
+      border-radius: 50%;
+      background: rgba(25, 170, 30, 0.69);
+      filter: blur(150px);
+    }
+  }
+
+  &__subtitle {
+    max-width: 385px;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    letter-spacing: -0.64px;
+  }
+
+  &__text {
+    color: $steel-gray;
+    margin-bottom: 24px;
+    font-size: 22px;
+    line-height: 1.3;
+    max-width: 630px;
+  }
+
+  &__btn {
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    right: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+}
