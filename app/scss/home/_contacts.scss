@@ -1,0 +1,131 @@
+.contacts {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    padding: 40px 35px;
+    background-color: $white;
+    border-radius: 28px;
+    border: 1px solid #CDCFD6;
+  }
+
+  &__info {
+    @include flex-column(28);
+
+    &-item {
+      @include flex-column(14);
+    }
+  }
+
+  &__inscription {
+    font-size: 20px;
+    letter-spacing: -0.44px;
+    color: $steel-gray;
+  }
+
+  &__links {
+    @include flex-column(6);
+  }
+
+  &__link {
+    font-size: 44px;
+    display: flex;
+    max-width: max-content;
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      color: $accent;
+      border-bottom-color: $accent;
+    }
+  }
+
+  &__socials {
+    @include flex-align-center(14);
+
+    &-link {
+      @include flex-center;
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background-color: rgba($deep-navy, .15);
+      border: 1px solid transparent;
+      transition: background-color .4s, border .4s;
+
+      &:hover {
+        background-color: transparent;
+        border-color: $deep-navy;
+
+        svg path {
+          fill: $deep-navy;
+        }
+      }
+
+      &:focus {
+        background-color: $deep-navy;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    margin-bottom: 28px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+  }
+
+  &__label {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    font-size: 19px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+  }
+
+  &__agree {
+    @include flex-align-center(8);
+    color: $steel-gray;
+
+    svg {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    font-weight: 500;
+    max-width: 505px;
+  }
+
+  &__map {
+    overflow: hidden;
+    border-radius: 28px;
+
+    iframe {
+      border: none;
+      height: 340px;
+      width: 100%;
+    }
+  }
+}

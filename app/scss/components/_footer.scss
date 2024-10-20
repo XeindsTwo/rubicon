@@ -83,6 +83,13 @@
         svg path {
           fill: $deep-navy;
         }
+
+        &:nth-child(2) {
+          svg path {
+            fill: transparent;
+            stroke: $deep-navy;
+          }
+        }
       }
     }
   }
