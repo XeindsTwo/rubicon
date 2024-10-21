@@ -3,6 +3,16 @@
   font-weight: 500;
   margin-bottom: 28px;
   letter-spacing: -0.64px;
+  @include r($tablet) {
+    font-size: 30px;
+    letter-spacing: -.5px;
+  }
+  @include r($sm) {
+    font-size: 28px;
+  }
+  @include r($phone) {
+    font-size: 26px;
+  }
 
   span {
     color: $accent;

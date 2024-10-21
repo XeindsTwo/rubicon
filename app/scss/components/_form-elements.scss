@@ -40,25 +40,6 @@
       color: $red;
     }
   }
-
-  &--admin {
-    border-radius: 6px;
-    text-align: left;
-    width: 100%;
-    max-width: 100%;
-    padding: 14px 14px;
-    font-weight: 400;
-    font-size: 16px;
-
-    &::placeholder {
-      color: $gray;
-    }
-  }
-
-  &--textarea {
-    resize: none;
-    min-height: 140px;
-  }
 }
 
 .label {
