@@ -11,6 +11,15 @@ title: 'Rubicon'
   @include('home/_cases.html')
   @include('home/_contacts.html')
 </main>
+<div class="modal" id="modal-success">
+  <h3 class="modal__title">Успешное создание заявки!</h3>
+  <p class="modal__text">
+    Поздравляем, ваша заявка была успешно принята. Ожидайте дальнейшего ответа от нашего менеджера.
+  </p>
+  <button class="modal__close success" type="button">
+    <span class="sr-only">закрыть модальное окно</span>
+  </button>
+</div>
 @include('components/_footer.html')
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="js/phone-mask.js" type="module"></script>
