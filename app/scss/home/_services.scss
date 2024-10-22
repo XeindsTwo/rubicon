@@ -1,6 +1,12 @@
 .services {
   &__list {
     @include flex-column(28);
+    @include r($lg) {
+      gap: 22px;
+    }
+    @include r($tablet) {
+      gap: 20px;
+    }
   }
 
   &__item {
@@ -8,6 +14,23 @@
     border-radius: 28px;
     background-color: $white;
     border: 1px solid #CDCFD6;
+    @include r($desktop) {
+      border-radius: 22px;
+    }
+    @media (max-width: 1060px) {
+      padding: 30px 25px;
+    }
+    @include r($tablet) {
+      border-radius: 18px;
+      padding: 28px 20px 24px;
+    }
+    @include r($sm) {
+      padding: 23px 18px;
+    }
+    @include r($phone) {
+      border-radius: 16px;
+      padding: 22px 16px;
+    }
   }
 
   &__body {
@@ -33,7 +56,64 @@
     width: 100%;
     border: 1px solid transparent;
     border-radius: 7px;
+    padding: 1px 0;
+    text-align: left;
     transition: color .4s, border .4s;
+    @media (max-width: 1300px) {
+      svg {
+        width: auto;
+        height: 35px;
+      }
+    }
+    @media (max-width: 1100px) {
+      font-size: 22px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      svg {
+        height: 32px;
+      }
+    }
+    @include r($lg) {
+      img {
+        width: 27px;
+        height: 27px;
+      }
+
+      svg {
+        height: 29px;
+      }
+    }
+    @include r($tablet) {
+      gap: 12px;
+      font-size: 20px;
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+
+      svg {
+        height: 27px;
+      }
+    }
+    @include r($phone) {
+      line-height: 1.3;
+      font-size: 18px;
+      img {
+        width: 23px;
+        height: 23px;
+      }
+
+      svg {
+        height: 23px;
+      }
+    }
+    @media (max-width: 385px) {
+      font-size: 17px;
+    }
 
     &:hover {
       color: $accent;
@@ -60,6 +140,9 @@
   &__items {
     @include flex-column(2);
     margin: 36px 0;
+    @include r($tablet) {
+      margin: 27px 0;
+    }
   }
 
   &__items li {
@@ -69,6 +152,23 @@
     font-size: 24px;
     color: $steel-gray;
     position: relative;
+    @media (max-width: 1300px) {
+      font-size: 22px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+    @media (max-width: 920px) {
+      padding-left: 12px;
+      font-size: 18px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @media (max-width: 420px) {
+      font-size: 14px;
+    }
 
     &::before {
       content: "";
@@ -78,21 +178,74 @@
       height: 7px;
       border-radius: 50%;
       background-color: $steel-gray;
+      @include r($sm) {
+        width: 5px;
+        height: 5px;
+      }
     }
   }
 
   &__process, &__right {
     @include flex-align-center(24);
+    @media (max-width: 1060px) {
+      align-items: flex-start;
+    }
+    @include r($phone) {
+      align-items: stretch;
+    }
+  }
+
+  &__process {
+    @media (max-width: 1060px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    @include r($sm) {
+      gap: 25px;
+    }
+    @include r($phone) {
+      gap: 20px;
+    }
   }
 
   &__right {
     gap: 30px;
+    @media (max-width: 660px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    @include r($phone) {
+      align-items: center;
+      gap: 15px;
+    }
   }
 
   &__info {
     @include flex-align-center(8);
     color: $steel-gray;
     font-size: 22px;
+    @media (max-width: 1300px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 18px;
+    }
+    @media (max-width: 920px) {
+      font-size: 17px;
+      img {
+        width: auto;
+        height: 24px;
+      }
+    }
+    @include r($tablet) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+      img {
+        height: 21px;
+      }
+    }
 
     span {
       font-weight: 500;
@@ -104,5 +257,17 @@
   &__link {
     font-size: 20px;
     padding: 12px 25px;
+    @media (max-width: 1300px) {
+      font-size: 18px;
+    }
+    @media (max-width: 920px) {
+      font-size: 16px;
+    }
+    @include r($sm) {
+      font-size: 14px;
+    }
+    @include r($phone) {
+      max-width: 100%;
+    }
   }
 }

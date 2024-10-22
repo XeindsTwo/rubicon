@@ -214,6 +214,10 @@
       font-size: 22px;
       max-width: 330px;
     }
+    @include r($phone) {
+      font-size: 21px;
+      max-width: 300px;
+    }
   }
 
   &__text {
@@ -231,7 +235,8 @@
       max-width: 500px;
     }
     @include r($phone) {
-      font-size: 16px;
+      font-size: 15px;
+      max-width: 320px;
     }
   }
 
@@ -285,7 +290,7 @@
       width: 195px;
     }
     @include r($phone) {
-      width: 180px;
+      width: 170px;
     }
   }
 }

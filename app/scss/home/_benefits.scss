@@ -3,15 +3,44 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    @media (max-width: 1100px) {
+      grid-gap: 15px;
+    }
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
     padding: 26px 28px;
     background-color: $white;
     border: 1px solid #CDCFD6;
     border-radius: 28px;
     overflow: hidden;
     position: relative;
+    @media (max-width: 1240px) {
+      padding: 23px 20px;
+    }
+    @include r($desktop) {
+      border-radius: 22px;
+    }
+    @include r($tablet) {
+      border-radius: 18px;
+    }
+    @media (max-width: 640px) {
+      grid-column: span 1;
+      margin: 0 auto;
+      max-width: 420px;
+    }
+    @include r($phone) {
+      border-radius: 16px;
+    }
 
     &::before {
       @include pseudo;
@@ -22,6 +51,28 @@
       border-radius: 50%;
       background: rgba(82, 135, 222, 0.46);
       filter: blur(95px);
+      @media (max-width: 1140px) {
+        width: 290px;
+        height: 290px;
+      }
+    }
+
+    &:last-child {
+      @media (max-width: 960px) {
+        grid-column: span 2;
+        max-width: 430px;
+        margin: 0 auto;
+      }
+      @media (max-width: 860px) {
+        max-width: 400px;
+      }
+      @include r($tablet) {
+        max-width: 360px;
+      }
+      @media (max-width: 640px) {
+        grid-column: span 1;
+        max-width: 420px;
+      }
     }
   }
 
@@ -29,18 +80,118 @@
     @include objectCoverBg;
     position: relative;
     z-index: 2;
-    margin: 0 auto 22px;
+    margin: 0 auto 30px;
+
+    &.one {
+      @media (max-width: 1300px) {
+        height: 210px;
+        width: auto;
+      }
+      @include r($desktop) {
+        height: 200px;
+      }
+      @include r($lg) {
+        height: 190px;
+      }
+      @media (max-width: 960px) {
+        height: 180px;
+      }
+      @media (max-width: 860px) {
+        height: 170px;
+      }
+      @include r($tablet) {
+        height: 160px;
+      }
+      @media (max-width: 660px) {
+        height: 150px;
+      }
+    }
+
+    &.two {
+      @media (max-width: 1300px) {
+        width: auto;
+        height: 195px;
+      }
+      @include r($desktop) {
+        height: 185px;
+      }
+      @include r($lg) {
+        height: 175px;
+      }
+      @media (max-width: 960px) {
+        height: 180px;
+      }
+      @media (max-width: 860px) {
+        height: 170px;
+      }
+      @include r($tablet) {
+        height: 160px;
+      }
+      @media (max-width: 660px) {
+        height: 150px;
+      }
+    }
+
+    &.three {
+      @media (max-width: 1300px) {
+        width: auto;
+        height: 195px;
+      }
+      @include r($desktop) {
+        height: 185px;
+      }
+      @include r($lg) {
+        height: 175px;
+      }
+      @media (max-width: 960px) {
+        height: 180px;
+      }
+      @media (max-width: 860px) {
+        height: 170px;
+      }
+      @include r($tablet) {
+        height: 160px;
+      }
+      @media (max-width: 660px) {
+        height: 150px;
+      }
+    }
   }
 
   &__name {
     font-weight: 600;
     font-size: 22px;
+    max-width: 310px;
     margin-bottom: 14px;
     letter-spacing: -0.44px;
+    @media (max-width: 1300px) {
+      margin-top: auto;
+    }
+    @media (max-width: 1140px) {
+      font-size: 20px;
+      max-width: 280px;
+    }
+    @media (max-width: 960px) {
+      margin: 0 auto 16px;
+      letter-spacing: 0;
+    }
   }
 
   &__text {
     color: $steel-gray;
     letter-spacing: -0.36px;
+    @media (max-width: 1300px) {
+      margin-bottom: auto;
+    }
+    @media (max-width: 1140px) {
+      font-size: 17px;
+    }
+    @include r($lg) {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
   }
 }

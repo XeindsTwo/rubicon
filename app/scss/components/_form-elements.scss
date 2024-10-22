@@ -9,6 +9,14 @@
   border: 1px solid transparent;
   transition: border .4s, background-color .4s;
   color: $black;
+  @include r($lg) {
+    font-size: 16px;
+    padding: 17px 16px;
+    border-radius: 12px;
+  }
+  @include r($phone) {
+    font-size: 14px;
+  }
 
   &:hover {
     border-color: $accent;
@@ -19,7 +27,7 @@
   }
 
   &::placeholder {
-    color: rgba($black, .25);
+    color: $steel-gray;
     transition: color .4s;
   }
 

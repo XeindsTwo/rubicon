@@ -12,6 +12,7 @@
   }
   @include r($phone) {
     font-size: 26px;
+    letter-spacing: 0;
   }
 
   span {
