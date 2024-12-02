@@ -3,6 +3,9 @@ title: 'Rubicon'
 })
 
 @include('components/_header.html')
+<div class="home__bg">
+  <img src="images/home-bg.jpg" height="680" alt="Задний фон">
+</div>
 <main>
   @include('home/_home.html')
   @include('home/_services.html')
@@ -17,7 +20,7 @@ title: 'Rubicon'
     Поздравляем, ваша заявка была успешно принята. Ожидайте дальнейшего ответа от нашего менеджера.
   </p>
   <button class="modal__close success" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
+    <span class="sr-only">Закрыть модальное окно</span>
   </button>
 </div>
 @include('components/_footer.html')

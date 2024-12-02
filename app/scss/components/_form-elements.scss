@@ -33,12 +33,12 @@
 
   &:-webkit-autofill,
   &:-webkit-autofill:focus {
-    -webkit-box-shadow: inset 0 0 0 50px transparent;
-    -webkit-text-fill-color: $accent;
+    -webkit-box-shadow: inset 0 0 0 50px #F6F8FA;
+    -webkit-text-fill-color: $black;
   }
 
   &:-webkit-autofill:hover {
-    -webkit-text-fill-color: $accent;
+    -webkit-text-fill-color: $black;
   }
 
   &--error {

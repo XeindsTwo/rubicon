@@ -1,12 +1,24 @@
 .command {
+  &__subtitle {
+    @include flex-align-center(7);
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 25px 25px;
+
+    img {
+      transform: translateY(-7px);
+    }
+  }
+
   &__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    @media (max-width: 660px) {
+    margin: 0 auto;
+    max-width: 540px;
+    @include r($desktop) {
       max-width: 480px;
-      margin: 0 auto;
-      grid-template-columns: repeat(1, 1fr);
+    }
+    @include r($tablet) {
+      max-width: 440px;
     }
   }
 
@@ -36,11 +48,14 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(182deg, rgba(255, 255, 255, 0.00) 39.51%, #FFF 84.58%);
+      @include r($lg) {
+        background: linear-gradient(182deg, rgba(255, 255, 255, 0.00) 39.51%, #FFF 90.58%);
+      }
     }
 
     &::after {
       @include pseudo;
-      top: -60%;
+      top: -30%;
       left: -28%;
       width: 318px;
       height: 318px;
@@ -63,20 +78,24 @@
         height: 260px;
       }
       @include r($phone) {
-        left: -38%;
+        display: none;
       }
     }
 
     img {
       @include objectCoverBg;
+      object-position: top;
       @include r($desktop) {
-        height: 300px;
+        height: 460px;
       }
       @include r($lg) {
-        height: 270px;
+        height: 430px;
       }
       @include r($tablet) {
-        height: 240px;
+        height: 410px;
+      }
+      @media (max-width: 400px) {
+        height: 370px;
       }
     }
   }
@@ -101,7 +120,7 @@
     font-size: 32px;
     font-weight: 500;
     letter-spacing: -0.64px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     @media (max-width: 1300px) {
       font-size: 28px;
     }
@@ -111,12 +130,14 @@
     @include r($lg) {
       font-size: 24px;
     }
-    @include r($tablet) {
+    @media (max-width: 430px) {
       font-size: 22px;
     }
   }
 
   &__text {
+    @include flex-align-center(8);
+    align-items: flex-start;
     color: $steel-gray;
     font-size: 22px;
     letter-spacing: -0.44px;
@@ -130,6 +151,10 @@
     }
     @include r($tablet) {
       font-size: 16px;
+    }
+
+    img {
+      transform: translateY(-2px);
     }
   }
 

@@ -1,15 +1,12 @@
 .footer {
   background-color: $white;
   border-top: 1px solid #CDCFD6;
-  padding: 38px 0 43px;
+  padding: 38px 0 20px;
   @include r($desktop) {
-    padding: 35px 0;
-  }
-  @include r($lg) {
-    padding-bottom: 25px;
+    padding: 32px 0 20px;
   }
   @include r($tablet) {
-    padding: 30px 0 20px;
+    padding: 26px 0 20px;
   }
 
   &__top {
@@ -140,5 +137,70 @@
         }
       }
     }
+  }
+
+  &__contacts {
+    @include flex-align-center(20);
+    align-items: flex-start;
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: rgba($deep-navy, .5);
+    @include r($lg) {
+      font-size: 14px;
+    }
+    @media (max-width: 720px) {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    @media (max-width: 520px) {
+      align-items: center;
+      text-align: center;
+    }
+
+    &-left {
+      @include flex-column(10);
+      max-width: 450px;
+      @media (max-width: 880px) {
+        max-width: 350px;
+      }
+      @media (max-width: 520px) {
+        align-items: center;
+      }
+    }
+
+    &-right {
+      @include flex-column(3);
+      text-align: right;
+      margin-left: auto;
+      @media (max-width: 720px) {
+        margin-left: 0;
+        text-align: left;
+      }
+      @media (max-width: 520px) {
+        align-items: center;
+      }
+    }
+
+    a {
+      max-width: max-content;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      transition: color .4s, border .4s;
+
+      &:hover {
+        color: $deep-navy;
+      }
+
+      &:focus {
+        border-color: $deep-navy;
+        color: $deep-navy;
+      }
+    }
+  }
+
+  &__address {
+
   }
 }
