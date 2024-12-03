@@ -1,4 +1,6 @@
 .home {
+  margin-top: 40px;
+
   @media (max-width: 1140px) {
     margin-bottom: 70px;
   }
@@ -14,8 +16,8 @@
 
   &__inner {
     @include flex-between-center-gap(30);
-    align-items: flex-start;
-    margin-bottom: 50px;
+    align-items: center;
+    margin-bottom: 70px;
     @media (max-width: 960px) {
       text-align: center;
       align-items: center;
@@ -24,17 +26,12 @@
   }
 
   &__content {
-    padding-top: 62px;
     max-width: 620px;
     @media (max-width: 1260px) {
       max-width: 600px;
     }
     @media (max-width: 1100px) {
-      padding-top: 50px;
       max-width: 530px;
-    }
-    @include r($lg) {
-      padding-top: 45px;
     }
   }
 

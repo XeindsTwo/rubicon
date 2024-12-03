@@ -175,6 +175,10 @@
       margin: 0 auto 16px;
       letter-spacing: 0;
     }
+
+    span {
+      color: $accent;
+    }
   }
 
   &__text {
