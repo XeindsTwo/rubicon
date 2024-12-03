@@ -120,6 +120,7 @@
   }
 
   &__comment {
+    line-height: 1.35;
     font-size: 20px;
     letter-spacing: -0.44px;
     color: $steel-gray;
@@ -128,6 +129,10 @@
     }
     @include r($lg) {
       font-size: 18px;
+    }
+
+    span {
+      color: $deep-navy;
     }
   }
 

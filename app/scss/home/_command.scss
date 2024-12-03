@@ -185,6 +185,10 @@
       }
     }
 
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
     span {
       color: #23262B;
       margin-left: -5px;
