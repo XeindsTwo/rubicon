@@ -68,7 +68,7 @@
   }
 
   &__list {
-    @include flex-align-center(36);
+    @include flex-align-center(28);
     margin-left: 24px;
     @media (max-width: 1240px) {
       gap: 26px;

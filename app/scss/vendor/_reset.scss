@@ -80,5 +80,5 @@ input:-webkit-autofill:active {
 }
 
 svg, path, g, circle, rect {
-  transition: all .4s;
+  transition: all .4s, transform .7s;
 }
