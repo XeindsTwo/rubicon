@@ -1,0 +1,140 @@
+.reviews {
+  &__card {
+    padding: 25px 25px 23px;
+    background-color: $white;
+    border: 1px solid #CDCFD6;
+    border-radius: 28px;
+  }
+
+  &__head {
+    @include flex-align-center(13);
+    margin-bottom: 25px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+  }
+
+  &__rating {
+    @include flex-align-center(6);
+
+    span {
+      color: #8F95AA;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__text {
+    line-height: 1.35;
+    font-size: 19px;
+  }
+
+  &__link {
+    display: flex;
+    margin: 0 auto;
+    max-width: max-content;
+    border-radius: 16px;
+    background-color: $accent;
+    border: 1px solid transparent;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: $white;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: $deep-navy;
+      border-color: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $accent;
+      color: $deep-navy;
+    }
+  }
+
+  &__navigation {
+    margin-top: 45px;
+    @include flex-align-center(8);
+    @media (max-width: 515px) {
+      display: none;
+    }
+
+    &.bottom {
+      margin-bottom: 25px;
+    }
+
+    &.none {
+      display: none;
+      @include r($lg) {
+        display: flex;
+        margin-bottom: 25px;
+      }
+      @media (max-width: 515px) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid transparent;
+    background-color: $accent;
+    transition: all .4s;
+
+    &.swiper-button-disabled {
+      opacity: .4;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &:hover {
+      background-color: $deep-navy;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $deep-navy;
+
+      svg path {
+        fill: $deep-navy;
+      }
+    }
+  }
+
+  .swiper {
+    cursor: pointer;
+    padding-bottom: 2px;
+    margin-bottom: 35px;
+
+    &-pagination {
+      @include flex-align-center(9);
+      justify-content: center;
+      margin: 17px auto 20px;
+      position: static;
+
+      &-bullet {
+        margin: 0 !important;
+        transition: all .4s;
+
+        &-active {
+          width: 24px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

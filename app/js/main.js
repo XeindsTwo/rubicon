@@ -114,4 +114,48 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+new Swiper('.swiper', {
+  speed: 600,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+  navigation: {
+    prevEl: '.reviews__btn--prev',
+    nextEl: '.reviews__btn--next'
+  },
+  keyboard: {
+    enabled: true
+  },
+  breakpoints: {
+    1260: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 23,
+    },
+    992: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 12
+    },
+    860: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 12
+    },
+    515: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 12
+    },
+    300: {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      freeMode: {
+        enabled: true
+      },
+    }
+  }
+})
+
 Fancybox.bind("[data-fancybox]", {});
