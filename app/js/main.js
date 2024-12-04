@@ -128,33 +128,21 @@ new Swiper('.swiper', {
     enabled: true
   },
   breakpoints: {
-    1260: {
+    1210: {
       slidesPerView: 3,
       slidesPerGroup: 1,
       spaceBetween: 23,
     },
-    992: {
+    712: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
+      slidesPerGroup: 1,
       spaceBetween: 12
     },
-    860: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
+    560: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
       spaceBetween: 12
     },
-    515: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 12
-    },
-    300: {
-      slidesPerView: 'auto',
-      spaceBetween: 12,
-      freeMode: {
-        enabled: true
-      },
-    }
   }
 })
 
