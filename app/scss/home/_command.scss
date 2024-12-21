@@ -23,6 +23,10 @@
       max-width: 750px;
       margin: 0 auto;
     }
+    @media (max-width: 675px) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 360px;
+    }
   }
 
   &__item {
@@ -43,6 +47,12 @@
     }
     @include r($tablet) {
       border-radius: 18px;
+    }
+    @media (max-width: 675px) {
+      &:last-child {
+        grid-column: span 1;
+        max-width: 360px;
+      }
     }
     @include r($phone) {
       border-radius: 16px;
@@ -134,6 +144,7 @@
       padding: 0 20px 25px;
     }
     @include r($tablet) {
+      margin-top: -25px;
       padding: 0 17px 25px;
     }
   }
