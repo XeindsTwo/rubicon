@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 new Swiper('.swiper', {
   speed: 600,
+  autoHeight: true,
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
@@ -138,12 +139,40 @@ new Swiper('.swiper', {
       slidesPerGroup: 1,
       spaceBetween: 12
     },
-    560: {
+    310: {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 12
     },
   }
 })
+
+document.querySelector('.contacts__form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch('php/form.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Сетевая ошибка');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.success) {
+        document.cookie = "redirected=true; path=/; max-age=3600";
+        window.location.href = '/thanks';
+      } else {
+        document.getElementById('responseMessage').innerText = 'Произошла ошибка при отправке заявки.';
+      }
+    })
+    .catch(error => {
+      document.getElementById('responseMessage').innerText = 'Произошла ошибка: ' + error.message;
+    });
+});
 
 Fancybox.bind("[data-fancybox]", {});

@@ -20,6 +20,12 @@
     margin-bottom: 25px;
   }
 
+  &__avatar {
+    @include objectCoverBg;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
   &__info {
     display: flex;
     gap: 7px;
@@ -190,7 +196,7 @@
     &-pagination {
       @include flex-align-center(9);
       justify-content: center;
-      margin: 17px auto 20px;
+      margin: 25px auto 20px;
       position: static;
 
       &-bullet {
