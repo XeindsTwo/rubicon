@@ -3,11 +3,11 @@
   justify-content: center;
   max-width: max-content;
   border-radius: 16px;
-  background-color: $accent;
+  background-color: $accent100;
   color: $white;
   text-align: center;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border: 1px solid;
   letter-spacing: -0.32px;
   transition: color .4s, background-color .4s, border .4s;
@@ -18,8 +18,8 @@
   }
 
   &:focus {
-    background-color: transparent;
-    border-color: $accent;
+    background-color: rgba($accent100, .1);
+    border-color: $accent100;
     color: $deep-navy;
   }
 }

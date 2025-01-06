@@ -161,6 +161,14 @@
           fill: $white;
         }
       }
+
+      &.telegram {
+        @media (max-width: 530px) {
+          svg {
+            height: 25px;
+          }
+        }
+      }
     }
   }
 
