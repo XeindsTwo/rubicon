@@ -1,0 +1,44 @@
+<div class="modal" id="modal-consultation">
+  <div class="modal__content">
+    <button class="modal__close consultation" type="button">
+      <span class="sr-only">закрыть модальное окно</span>
+    </button>
+    <h3 class="modal__title">Бесплатная консультация</h3>
+    <p class="modal__text">
+      Заполните свои данные, и мы ответим вам в скором времени
+    </p>
+    <form class="modal__form" action="">
+      <ul class="modal__fields">
+        <div class="modal__field">
+          <label for="name">
+            <input
+                class="input" type="text"
+                name="name" id="name"
+                required maxlength="255" placeholder="Заполните имя"
+            >
+          </label>
+        </div>
+        <div class="modal__field">
+          <label for="phone">
+            <input
+                class="input" type="text"
+                data-tel-input name="phone" id="phone"
+                required maxlength="255" placeholder="Заполните телефон"
+            >
+          </label>
+        </div>
+      </ul>
+      <button class="modal__btn btn" type="submit">Записаться на консультацию</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="modal-success">
+  <button class="modal__close success" type="button">
+    <span class="sr-only">закрыть модальное окно</span>
+  </button>
+  <h3 class="modal__title">Успешное создание заявки!</h3>
+  <p class="modal__text">
+    Поздравляем, ваша заявка была успешно принята. Ожидайте дальнейшего ответа от нашего менеджера
+  </p>
+</div>
