@@ -1,12 +1,18 @@
 .header {
-  margin-top: 28px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  position: relative;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  top: 0;
+  z-index: 5000;
   @media (max-width: 1100px) {
-    margin-top: 20px;
+    margin-top: 0;
+    padding-top: 20px;
   }
   @include r($tablet) {
-    margin-top: 15px;
+    padding-top: 11px;
   }
 
   &::before {
@@ -34,6 +40,7 @@
     color: $steel-gray;
     border: 1px solid #CDCFD6;
     background-color: $white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     @include flex-align-center(0);
     @media (max-width: 1120px) {
       padding: 18px 20px;
@@ -68,7 +75,7 @@
   }
 
   &__list {
-    @include flex-align-center(28);
+    @include flex-align-center(22);
     margin-left: 24px;
     @media (max-width: 1240px) {
       gap: 26px;
@@ -81,6 +88,14 @@
     }
     @media (max-width: 380px) {
       gap: 30px;
+    }
+
+    li {
+      &.non-adaptive {
+        @media (max-width: 1260px) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -110,7 +125,7 @@
   }
 
   &__right {
-    @include flex-align-center(15);
+    @include flex-align-center(18);
     margin-left: auto;
     @media (max-width: 1100px) {
       gap: 25px;
@@ -123,7 +138,7 @@
     border-radius: 4px;
     transition: color .4s, border .4s;
     @include flex-align-center(6);
-    @media (max-width: 450px) {
+    @media (max-width: 570px) {
       display: none;
     }
 
@@ -141,7 +156,7 @@
 
     &--mobile {
       display: none;
-      @media (max-width: 450px) {
+      @media (max-width: 570px) {
         display: flex;
         margin-bottom: 30px;
         svg {
@@ -155,11 +170,85 @@
     }
   }
 
+  &__socials {
+    @include flex-align-center(10);
+    @media (max-width: 570px) {
+      gap: 8px;
+    }
+    @media (max-width: 360px) {
+      gap: 6px;
+    }
+  }
+
+  &__social {
+    @include flex-center;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    padding: 1px;
+    transition: border .4s;
+    @media (max-width: 570px) {
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    @media (max-width: 360px) {
+      svg {
+        width: 33px;
+        height: 33px;
+      }
+    }
+
+    &.viber {
+      &:hover {
+        svg path {
+          fill: #369636;
+        }
+      }
+
+      &:focus {
+        border-color: #3EAF3F;
+
+        svg path {
+          fill: #3e8c3e;
+        }
+      }
+    }
+
+    &.telegram {
+      &:hover {
+        svg path {
+          &:first-child {
+            fill: rgba(#0088CC, .5);
+          }
+
+          &:last-child {
+            fill: #3c6381;
+          }
+        }
+      }
+
+      &:focus {
+        border-color: #0088CC;
+
+        svg path {
+          &:first-child {
+            fill: rgba(#0088CC, .5);
+          }
+
+          &:last-child {
+            fill: #2c5477;
+          }
+        }
+      }
+    }
+  }
+
   &__btn {
     border-radius: 14px;
     background-color: $accent100;
     color: $white;
-    padding: 11px 17px;
+    padding: 14px 17px;
     border: 1px solid;
     transition: color .4s, background-color .4s, border .4s;
     @media (max-width: 1100px) {

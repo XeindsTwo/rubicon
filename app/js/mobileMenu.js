@@ -15,14 +15,16 @@ export function setupMobileMenu() {
 
   function scrollToTarget(targetId) {
     const targetSection = document.querySelector(targetId);
+    const header = document.querySelector('.header');
     if (targetSection) {
       html.classList.remove('active');
       headerMobile.classList.remove('active');
       menuBtn.classList.remove('active');
       headerLogo.classList.remove('active');
       setTimeout(() => {
-        const targetOffset = targetSection.offsetTop - 25;
-        window.scrollTo({top: targetOffset, behavior: 'smooth'});
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetOffset = targetSection.offsetTop - headerHeight - 40;
+        window.scrollTo({ top: targetOffset, behavior: 'smooth' });
       }, 700);
     }
   }

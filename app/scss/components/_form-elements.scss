@@ -60,7 +60,7 @@
 .error {
   display: none;
   color: $red;
-  font-size: 18px;
+  font-size: 17px;
   margin-top: 12px;
 
   &.active {
@@ -69,5 +69,10 @@
 
   &.admin {
     font-size: 16px;
+  }
+
+  &.margin-otric {
+    margin-top: -12px;
+    color: $white;
   }
 }

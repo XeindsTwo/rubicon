@@ -1,0 +1,61 @@
+<div class="offer" id="offer_discount">
+  <div class="container">
+    <div class="offer__inner">
+      <div class="offer__content active" id="offer_content_one">
+        <button class="offer__close" type="button" disabled tabindex="-1">
+          <span class="sr-only">закрыть модальное окно</span>
+        </button>
+        <p class="offer__title">🎁 Получите скидку -10%!</p>
+        <p class="offer__text">
+          Оставьте свой номер телефона и получите скидку -10% на услуги до конца недели.
+        </p>
+        <div class="offer__actions">
+          <button class="offer__btn btn" id="btn-claim-discount" disabled tabindex="-1">Закрепить скидку</button>
+          <a
+              class="offer__btn offer__btn--whatsapp btn"
+              id="btn-whatsapp"
+              href="https://wa.me/ваш_номер_телефона"
+              target="_blank"
+              disabled tabindex="-1"
+          >
+            Написать в WhatsApp
+          </a>
+        </div>
+      </div>
+      <form class="offer__content" id="offer_content_two" method="post">
+        <button class="offer__close" type="button" disabled tabindex="-1">
+          <span class="sr-only">закрыть модальное окно</span>
+        </button>
+        <p class="offer__title">🎁 Закрепить скидку</p>
+        <input
+            class="offer__input input"
+            type="text"
+            data-tel-input required
+            placeholder="Введите номер телефона"
+            maxlength="255"
+        >
+        <span class="error margin-otric" id="error-phone">Введите корректно телефон</span>
+        <div class="offer__actions">
+          <button
+              class="offer__btn btn"
+              id="btn-submit-discount"
+              disabled tabindex="-1"
+              type="submit"
+          >
+            Отправить
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-success-offer">
+  <button class="modal__close success-offer" type="button">
+    <span class="sr-only">закрыть модальное окно</span>
+  </button>
+  <h3 class="modal__title">Успешное создание заявки!</h3>
+  <p class="modal__text">
+    Спасибо! Ваша заявка принята, наш специалист свяжется с вами в ближайшее время!
+  </p>
+</div>

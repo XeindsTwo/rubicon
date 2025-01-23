@@ -10,7 +10,7 @@
   box-shadow: 0 25px 50px -15px rgba(51, 51, 51, .4);
   transform: translate(-50%, 0%);
   opacity: 0;
-  z-index: 380;
+  z-index: 4100;
   pointer-events: none;
   outline: transparent;
   transition: opacity .5s ease-in-out, transform .5s ease-in-out;
@@ -122,10 +122,37 @@
   }
 
   &__btn {
-    padding: 15px 22px;
+    padding: 17px 22px;
     font-size: 16px;
     @media (max-width: 530px) {
       font-size: 15px;
+    }
+
+    &--whatsapp {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #25D366;
+
+      &:hover {
+        background-color: transparent;
+        border-color: #25D366;
+        color: #20a954;
+
+        svg path {
+          fill: #25D366;
+        }
+      }
+
+      &:focus {
+        background-color: #0d153c;
+        border-color: transparent;
+        color: #28e16d;
+
+        svg path {
+          fill: #28e16d;
+        }
+      }
     }
   }
 }

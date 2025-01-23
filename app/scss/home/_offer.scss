@@ -1,0 +1,225 @@
+.offer {
+  position: fixed;
+  width: 100%;
+  bottom: -330px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+  transition: all .6s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    bottom: 30px;
+    pointer-events: auto;
+    visibility: visible;
+    @include r($sm) {
+      bottom: 20px;
+    }
+  }
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 520px;
+    width: 100%;
+    @include r($phone) {
+      margin: 0 -5px;
+      width: initial;
+      max-width: initial;
+    }
+  }
+
+  &__content {
+    position: relative;
+    @include flex-column(25);
+    display: none;
+    padding: 20px 20px;
+    border-radius: 14px;
+    background-color: $accent100;
+    box-shadow: 0 0 40px 0 rgba($black, .2);
+    color: $white;
+    @include r($phone) {
+      padding: 14px 17px;
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__form {
+    @include flex-column(15);
+  }
+
+  &__title {
+    font-size: 22px;
+    @include r($sm) {
+      font-size: 20px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+    }
+  }
+
+  &__input {
+    &:focus {
+      border-color: transparent;
+    }
+  }
+
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    @media (max-width: 510px) {
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 13px;
+    }
+  }
+
+  &__btn {
+    padding: 17px 25px;
+    font-size: 16px;
+    background-color: $white;
+    color: $black;
+    border-color: transparent;
+    @media (max-width: 540px) {
+      font-size: 15px;
+      padding: 17px 22px;
+    }
+    @media (max-width: 510px) {
+      padding: 15px 22px;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: 360px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+      border-color: $white;
+    }
+
+    &:focus {
+      background-color: $black100;
+      border-color: transparent;
+      color: $white;
+    }
+
+    &--whatsapp {
+      color: $white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #25D366;
+
+      &:hover {
+        background-color: #23c05d;
+        border-color: transparent;
+        color: $white;
+
+        svg path {
+          fill: #25D366;
+        }
+      }
+
+      &:focus {
+        background-color: #0d153c;
+        border-color: transparent;
+        color: #28e16d;
+
+        svg path {
+          fill: #28e16d;
+        }
+      }
+    }
+  }
+
+  &__input {
+    border-radius: 8px;
+    padding: 17px 13px;
+    font-size: 16px;
+    @include r($phone) {
+      padding: 15px 12px;
+    }
+  }
+
+  &__text {
+    line-height: 1.35;
+    @include r($sm) {
+      max-width: 390px;
+      font-size: 16px;
+    }
+    @media (max-width: 385px) {
+      font-size: 15px;
+    }
+  }
+
+  &__close {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 10px 0 rgba($black, 0.2);
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 2;
+    transition: outline .4s, background-color .4s, transform .4s;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    background-color: $white;
+    @include r($phone) {
+      top: -7px;
+      right: -5px;
+    }
+    @media (max-width: 380px) {
+      width: 33px;
+      height: 33px;
+    }
+
+    &:hover {
+      color: $accent;
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    &:focus {
+      outline-color: transparent;
+      background-color: $black;
+
+      &::before, &::after {
+        background-color: $white;
+      }
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      width: 48%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: currentColor;
+      border-radius: 4px;
+      transition: transform .4s;
+      will-change: transform;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

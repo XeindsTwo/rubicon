@@ -3,15 +3,19 @@ export function scrollToSection(event) {
   const targetId = event.target.getAttribute('href').slice(1);
   const targetElement = document.getElementById(targetId);
 
+  const headerHeight = document.querySelector('.header').offsetHeight;
+
   let targetOffset;
 
   if (targetId === 'indicators' || targetId === 'guarantees') {
     targetOffset = targetElement.offsetTop;
   } else {
-    targetOffset = targetElement.offsetTop - 30;
+    targetOffset = targetElement.offsetTop - 40;
   }
 
-  window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+  targetOffset -= headerHeight;
+
+  window.scrollTo({top: targetOffset, behavior: 'smooth'});
 }
 
 export function bindScrollToLinks() {

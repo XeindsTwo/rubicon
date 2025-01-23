@@ -10,7 +10,7 @@
   padding: 12px 16px;
   border: 1px solid;
   letter-spacing: -0.32px;
-  transition: color .4s, background-color .4s, border .4s;
+  transition: color 0.4s, background-color 0.4s, border 0.4s;
 
   &:hover {
     background-color: $deep-navy;
@@ -18,8 +18,43 @@
   }
 
   &:focus {
-    background-color: rgba($accent100, .1);
+    background-color: rgba($accent100, 0.1);
     border-color: $accent100;
     color: $deep-navy;
+  }
+
+  &--shine {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      opacity: .6;
+      left: -150%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+                      120deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.6) 20%,
+                      rgba(255, 255, 255, 0) 70%
+      );
+      transform: skewX(-20deg);
+      animation: shine 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 110%;
+  }
+  100% {
+    left: 150%;
   }
 }

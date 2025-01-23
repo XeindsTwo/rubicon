@@ -190,7 +190,7 @@
       margin-bottom: 25px;
     }
     @include r($phone) {
-      margin-bottom: 18px;
+      margin: 0 -5px 18px;
     }
 
     &-pagination {
