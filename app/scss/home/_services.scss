@@ -202,12 +202,13 @@
   }
 
   &__process {
-    flex-direction: column;
-    gap: 17px;
+    @include flex-between-center-gap(30);
 
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
       flex-direction: column;
-      gap: 30px;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
     }
     @include r($sm) {
       gap: 25px;
@@ -264,21 +265,21 @@
   }
 
   &__link {
-    font-size: 20px;
-    width: 100%;
-    max-width: 100%;
-    padding: 16px 25px;
-    @media (max-width: 1300px) {
-      font-size: 18px;
-    }
+    margin-right: auto;
+    font-size: 18px;
+    padding: 18px 30px;
     @media (max-width: 920px) {
       font-size: 16px;
     }
+    @media (max-width: 800px) {
+      margin-right: 0;
+    }
     @include r($sm) {
-      font-size: 14px;
+      width: 100%;
+      max-width: 100%;
     }
     @include r($phone) {
-      max-width: 100%;
+      font-size: 15px;
     }
   }
 }

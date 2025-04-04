@@ -211,19 +211,20 @@
   }
 
   &__link {
+    margin-right: auto;
     font-size: 18px;
-    max-width: 100%;
-    width: 100%;
     padding: 17px 22px;
     margin-top: 20px;
-    @include r($sm) {
+    @media (max-width: 920px) {
       font-size: 16px;
     }
-    @include r($phone) {
-      font-size: 15px;
+    @include r($sm) {
+      width: 100%;
+      max-width: 100%;
     }
-    @media (max-width: 360px) {
-      padding: 15px 20px;
+    @include r($phone) {
+      margin-top: 12px;
+      font-size: 15px;
     }
   }
 
